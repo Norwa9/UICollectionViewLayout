@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JLXUICollectionViewFlowLayout : UICollectionViewFlowLayout
+@interface LWUICollectionViewFlowLayout : UICollectionViewFlowLayout
 
 @end

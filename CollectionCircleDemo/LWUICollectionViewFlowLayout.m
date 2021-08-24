@@ -6,9 +6,9 @@
 //  Copyright © 2017年 damon. All rights reserved.
 //
 
-#import "JLXUICollectionViewFlowLayout.h"
+#import "LWUICollectionViewFlowLayout.h"
 
-@implementation JLXUICollectionViewFlowLayout
+@implementation LWUICollectionViewFlowLayout
 
 //设置放大动画
 -(NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
@@ -25,6 +25,7 @@
         CGFloat scale = fabs(cos(apartScale * M_PI/4));
         //设置cell的缩放 按照余弦函数曲线 越居中越趋近于1
         attributes.transform = CGAffineTransformMakeScale(1.0, scale);
+        
     }
     return arr;
 }

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "JLXUICollectionViewFlowLayout.h"
+#import "LWUICollectionViewFlowLayout.h"
 #import "HomeCaseCell.h"
 
 static NSString * const reuseIdentifier = @"HomeCaseCellID";
@@ -30,7 +30,7 @@ static NSString * const reuseIdentifier = @"HomeCaseCellID";
 }
 
 -(void)createUI{
-    JLXUICollectionViewFlowLayout *layout = [[JLXUICollectionViewFlowLayout alloc] init];
+    LWUICollectionViewFlowLayout *layout = [[LWUICollectionViewFlowLayout alloc] init];
     layout.itemSize = CGSizeMake(kItemW, kItemH);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.minimumLineSpacing = 20;
