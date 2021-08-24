@@ -7,9 +7,10 @@
 //
 
 #import "HomeCaseCell.h"
+#import <ReactiveObjC.h>
 
 @interface HomeCaseCell ()
-
+@property(nonatomic,strong)UIView *maskView;
 @end
 
 @implementation HomeCaseCell
@@ -43,8 +44,26 @@
         self.coverImgView.layer.masksToBounds = YES;
         self.coverImgView.layer.cornerRadius = 8.f;
         [self.contentView addSubview:self.coverImgView];
+        
+        self.maskView.frame = CGRectMake(0, 0, kItemW, kItemH);
+        self.maskView.layer.cornerRadius = 8.f;
+        [self.contentView addSubview:self.maskView];
+        [RACObserve(self, alpha) subscribeNext:^(NSNumber *_Nullable x) {
+            self.maskView.alpha = 1 - x.floatValue;//遮罩视图随着cell的alpha而变化。
+        }];
+        
     }
     return  self;
+}
+
+- (UIView *)maskView
+{
+    if(!_maskView){
+        _maskView = [UIView new];
+        _maskView.backgroundColor = UIColor.blackColor;
+        _maskView.alpha = 0;
+    }
+    return _maskView;
 }
 
 @end

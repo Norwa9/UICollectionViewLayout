@@ -25,7 +25,7 @@
         CGFloat scale = fabs(cos(apartScale * M_PI/4));
         //设置cell的缩放 按照余弦函数曲线 越居中越趋近于1
         attributes.transform = CGAffineTransformMakeScale(1.0, scale);
-        
+        attributes.alpha = scale;
     }
     return arr;
 }
